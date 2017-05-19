@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<svg viewBox="0 0 1200 1600" width="1200" height="1600" xml:space="preserve">
+  <rect
+    style="fill:{{ color1 }};"
+    width="1200"
+    height="1200"
+    x="0"
+    y="0" />
+  <rect
+    style="fill:{{ color2 }};"
+    width="1200"
+    height="400"
+    x="0"
+    y="1200" />
+  <text
+    y="300"
+    x="600"
+    style="font-size:80px;color:{{ color5 }};">
+    <tspan text-anchor="middle">{{ title }}</tspan>
+  </text>
+  <text
+    y="1500"
+    x="1100"
+    style="font-size:40px;color:{{ color5 }};">
+    {%- for author in authors %}
+    <tspan text-anchor="end" dy="{{ loop.index * -15 }}">{{ author }}</tspan>
+    {%- endfor %}
+  </text>
+</svg>
