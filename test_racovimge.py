@@ -6,78 +6,81 @@
 
 import racovimge
 import random
-import uuid
 import pathlib
 import subprocess
 
 ###############################################################################
 
-
 titles = [
-    ('Don Quixote', 'Miguel De Cervantes'),
-    ('Robinson Crusoe', 'Daniel Defoe'),
-    ('Tom Jones', 'Henry Fielding'),
-    ('Clarissa', 'Samuel Richardson'),
-    ('Tristram Shandy', 'Laurence Sterne'),
-    ('Dangerous Liaisons', 'Pierre Choderlos De Laclos'),
-    ('Emma', 'Jane Austen'),
-    ('Frankenstein', 'Mary Shelley'),
-    ('Nightmare Abbey Thomas', 'Love Peacock'),
-    ('The Black Sheep', 'Honoré De Balzac'),
-    ('The Charterhouse of', 'Parma Stendhal'),
-    ('The Count of Monte Cristo', 'Alexandre Dumas'),
-    ('Sybil', 'Benjamin Disraeli'),
-    ('David Copperfield', 'Charles Dickens'),
-    ('Wuthering Heights', 'Emily Brontë'),
-    ('Jane Eyre', 'Charlotte Brontë'),
-    ('Vanity Fair', 'William Makepeace Thackeray'),
-    ('The Scarlet Letter', 'Nathaniel Hawthorne'),
-    ('Moby-Dick', 'Herman Melville'),
-    ('Madame Bovary', 'Gustave Flaubert'),
-    ('The Woman in White', 'Wilkie Collins'),
-    ('Little Women', 'Louisa M. Alcott'),
-    ('The Way We Live Now', 'Anthony Trollope'),
-    ('Анна Каренина', 'Лев Толстой'),
-    ('Daniel Deronda', 'George Eliot'),
-    ('Братья Карамазовы', 'Фёодр Достоевский'),
-    ('The Portrait of a Lady', 'Henry James'),
-    ('Huckleberry Finn', 'Mark Twain'),
-    ('The Strange Case of Dr Jekyll and Mr Hyde', 'Robert Louis Stevenson'),
-    ('Three Men in a Boat', 'Jerome K. Jerome'),
-    ('The Picture of Dorian Gray', 'Oscar Wilde'),
-    ('The Diary of a Nobody', 'George Grossmith'),
-    ('Jude the Obscure', 'Thomas Hardy'),
-    ('The Riddle of the Sands', 'Erskine Childers'),
-    ('The Call of the Wild', 'Jack London'),
-    ('Nostromo', 'Joseph Conrad'),
-    ('The Wind in the Willows', 'Kenneth Grahame'),
-    ('In Search of Lost Time', 'Marcel Proust'),
-    ('The Good Soldier Ford', 'Madox Ford'),
-    ('The Thirty-Nine Steps', 'John Buchan'),
-    ('Ulysses', 'James Joyce'),
-    ('Mrs Dalloway', 'Virginia Woolf'),
     ('A Passage to India', 'EM Forster'),
-    ('The Trial', 'Franz Kafka'),
-    ('Men Without Women', 'Ernest Hemingway'),
-    ('Journey to the End of the Night Louis', 'Ferdinand Celine'),
+    ('A Time Odyssey', ('Arthur C. Clarke', 'Stephen Baxter')),
     ('As I Lay Dying', 'William Faulkner'),
     ('Brave New World', 'Aldous Huxley'),
-    ('The Big Sleep', 'Raymond Chandler'),
-    ('The Pursuit Of Love', 'Nancy Mitford'),
-    ('The Plague', 'Albert Camus'),
-    ('Nineteen Eighty-Four', 'George Orwell'),
-    ('Malone Dies', 'Samuel Beckett'),
-    ('Lucky Jim', 'Kingsley Amis'),
-    ('Lord of the Flies', 'William Golding'),
-    ('The Space Merchants', ('Frederik Pohl', 'Cyril M. Kornblut')),
-    ('Inferno', ('Larry Niven', 'Jerry Pournelle')),
+    ('Clarissa', 'Samuel Richardson'),
+    ('Dangerous Liaisons', 'Pierre Choderlos De Laclos'),
+    ('Daniel Deronda', 'George Eliot'),
+    ('David Copperfield', 'Charles Dickens'),
+    ('Don Quixote', 'Miguel De Cervantes'),
+    ('Emma', 'Jane Austen'),
+    ('Frankenstein', 'Mary Shelley'),
     ('Freedom Beach', ('James Patrick Kelly', 'John Kessel')),
-    ('A Time Odyssey', ('Arthur C. Clarke', 'Stephen Baxter')),
+    ('Huckleberry Finn', 'Mark Twain'),
+    ('In Search of Lost Time', 'Marcel Proust'),
+    ('Inferno', ('Larry Niven', 'Jerry Pournelle')),
+    ('Jane Eyre', 'Charlotte Brontë'),
+    ('Journey to the End of the Night Louis', 'Ferdinand Celine'),
+    ('Jude the Obscure', 'Thomas Hardy'),
+    ('Little Women', 'Louisa M. Alcott'),
+    ('Lord of the Flies', 'William Golding'),
+    ('Lucky Jim', 'Kingsley Amis'),
+    ('Madame Bovary', 'Gustave Flaubert'),
+    ('Malone Dies', 'Samuel Beckett'),
+    ('Men Without Women', 'Ernest Hemingway'),
+    ('Moby-Dick', 'Herman Melville'),
+    ('Mrs Dalloway', 'Virginia Woolf'),
+    ('Nightmare Abbey', 'Thomas Love Peacock'),
+    ('Nineteen Eighty-Four', 'George Orwell'),
+    ('Nostromo', 'Joseph Conrad'),
+    ('Robinson Crusoe', 'Daniel Defoe'),
+    ('Sybil', 'Benjamin Disraeli'),
+    ('The Big Sleep', 'Raymond Chandler'),
+    ('The Black Sheep', 'Honoré De Balzac'),
+    ('The Call of the Wild', 'Jack London'),
+    ('The Charterhouse of', 'Parma Stendhal'),
+    ('The Count of Monte Cristo', 'Alexandre Dumas'),
+    ('The Diary of a Nobody', 'George Grossmith'),
+    ('The Good Soldier Ford', 'Madox Ford'),
+    ('The Picture of Dorian Gray', 'Oscar Wilde'),
+    ('The Plague', 'Albert Camus'),
+    ('The Portrait of a Lady', 'Henry James'),
+    ('The Pursuit Of Love', 'Nancy Mitford'),
+    ('The Riddle of the Sands', 'Erskine Childers'),
+    ('The Scarlet Letter', 'Nathaniel Hawthorne'),
+    ('The Space Merchants', ('Frederik Pohl', 'Cyril M. Kornblut')),
+    ('The Strange Case of Dr Jekyll and Mr Hyde', 'Robert Louis Stevenson'),
+    ('The Thirty-Nine Steps', 'John Buchan'),
+    ('The Trial', 'Franz Kafka'),
+    ('The Way We Live Now', 'Anthony Trollope'),
+    ('The Wind in the Willows', 'Kenneth Grahame'),
+    ('The Woman in White', 'Wilkie Collins'),
+    ('Three Men in a Boat', 'Jerome K. Jerome'),
+    ('Tom Jones', 'Henry Fielding'),
+    ('Tristram Shandy', 'Laurence Sterne'),
+    ('Ulysses', 'James Joyce'),
+    ('Vanity Fair', 'William Makepeace Thackeray'),
+    ('Wuthering Heights', 'Emily Brontë'),
+    ('Анна Каренина', 'Лев Толстой'),
+    ('Братья Карамазовы', 'Фёодр Достоевский'),
 ]
 
 
+counter = 1
+
+
 def save_png(svgdata):
-    name = 'testout/{}'.format(uuid.uuid4())
+    global counter
+    name = 'testout/{}'.format(str(counter).zfill(3))
+    counter += 1
     svgfile = pathlib.Path(name + '.svg')
     with svgfile.open('w') as file:
         file.write(svgdata)
@@ -92,5 +95,6 @@ def test_everything():
     for template in racovimge.templates:
         for colors in racovimge.color_schemes:
             title, author = random.choice(titles)
-            image = racovimge.cover(title, author, template, colors)
+            font = random.choice(racovimge.fonts)
+            image = racovimge.cover(title, author, template, colors, font)
             save_png(image)
