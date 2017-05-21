@@ -1,0 +1,242 @@
+<?xml version="1.0" standalone="no"?>
+<svg viewBox="0 0 1200 1600" width="1200" height="1600" xml:space="preserve">
+  <rect
+    style="fill:{{ color2 }};"
+    width="1200"
+    height="1600"
+    x="0"
+    y="0" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,547.63782)">
+    <g
+       id="g3504">
+      <use
+         height="1600"
+         width="1200"
+         transform="translate(200,1400)"
+         id="use3411"
+         xlink:href="#use3061"
+         y="0"
+         x="0" />
+      <use
+         height="1600"
+         width="1200"
+         transform="translate(-100,1400)"
+         id="use3413"
+         xlink:href="#g3337"
+         y="0"
+         x="0" />
+      <use
+         height="1600"
+         width="1200"
+         transform="translate(0,1500)"
+         id="use3415"
+         xlink:href="#g3333"
+         y="0"
+         x="0" />
+    </g>
+    <g
+       id="g3469">
+      <g
+         id="g3448">
+        <g
+           id="g3429">
+          <rect
+             fill="{{ color1 }}"
+             id="use3061"
+             width="96"
+             height="96"
+             x="2"
+             y="-445.63782" />
+          <g
+             fill="{{ color1 }}"
+             id="g3337">
+            <rect
+               y="-395.63782"
+               x="102"
+               height="46"
+               width="46"
+               id="use3061-9"
+               />
+            <rect
+               y="-445.63782"
+               x="102"
+               height="46"
+               width="46"
+               id="use3061-9-0"
+               />
+            <rect
+               y="-395.63782"
+               x="152"
+               height="46"
+               width="46"
+               id="use3061-9-9"
+               />
+            <rect
+               y="-445.63782"
+               x="152"
+               height="46"
+               width="46"
+               id="use3061-9-0-7"
+               />
+          </g>
+          <g
+             fill="{{ color1 }}"
+             id="g3333">
+            <rect
+               y="-545.63782"
+               x="102"
+               height="96"
+               width="46"
+               id="use3061-6"
+               />
+            <rect
+               y="-545.63782"
+               x="152"
+               height="96"
+               width="46"
+               id="use3061-6-9"
+               />
+          </g>
+          <use
+             height="1600"
+             width="1200"
+             transform="translate(-100,-100)"
+             id="use3417"
+             xlink:href="#g3337"
+             y="0"
+             x="0" />
+          <use
+             height="1600"
+             width="1200"
+             transform="translate(100,100)"
+             id="use3419"
+             xlink:href="#g3337"
+             y="0"
+             x="0" />
+          <use
+             height="1600"
+             width="1200"
+             transform="translate(100,100)"
+             id="use3421"
+             xlink:href="#use3061"
+             y="0"
+             x="0" />
+          <use
+             height="1600"
+             width="1200"
+             transform="translate(100,-200)"
+             id="use3423"
+             xlink:href="#use3421"
+             y="0"
+             x="0" />
+          <use
+             height="1600"
+             width="1200"
+             transform="translate(100,100)"
+             id="use3425"
+             xlink:href="#g3333"
+             y="0"
+             x="0" />
+          <use
+             height="1600"
+             width="1200"
+             transform="translate(-200,100)"
+             id="use3427"
+             xlink:href="#use3425"
+             y="0"
+             x="0" />
+        </g>
+        <use
+           x="0"
+           y="0"
+           xlink:href="#g3429"
+           id="use3446"
+           transform="translate(300,0)"
+           width="1200"
+           height="1600" />
+      </g>
+      <use
+         height="1600"
+         width="1200"
+         transform="translate(600,0)"
+         id="use3467"
+         xlink:href="#g3448"
+         y="0"
+         x="0" />
+    </g>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3469"
+       id="use3490"
+       transform="translate(0,300)"
+       width="1200"
+       height="1600" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use3490"
+       id="use3492"
+       transform="translate(0,300)"
+       width="1200"
+       height="1600" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use3492"
+       id="use3494"
+       transform="translate(0,300)"
+       width="1200"
+       height="1600" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use3494"
+       id="use3496"
+       transform="translate(0,300)"
+       width="1200"
+       height="1600" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3504"
+       id="use3509"
+       transform="translate(300,0)"
+       width="1200"
+       height="1600" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#g3504"
+       id="use3511"
+       transform="translate(600,0)"
+       width="1200"
+       height="1600" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use3509"
+       id="use3513"
+       transform="translate(600,0)"
+       width="1200"
+       height="1600" />
+  </g>
+  <text
+    y="200"
+    style="font-size:100px;font-weight:bold;fill:{{ color5 }};">
+    {%- for line in title|wrap(20) %}
+    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="100">{{ line }}</tspan>
+    {%- endfor %}
+  </text>
+  <text
+    y="1500"
+    style="font-size:60px;font-weight:bold;fill:{{ color5 }};">
+    {%- for author in authors %}
+    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="-60">{{ author }}</tspan>
+    {%- endfor %}
+  </text>
+</svg>

@@ -28,7 +28,7 @@ titles = [
     ('In Search of Lost Time', 'Marcel Proust'),
     ('Inferno', ('Larry Niven', 'Jerry Pournelle')),
     ('Jane Eyre', 'Charlotte Brontë'),
-    ('Journey to the End of the Night Louis', 'Ferdinand Celine'),
+    ('Journey to the End of the Night', 'Louis Ferdinand Celine'),
     ('Jude the Obscure', 'Thomas Hardy'),
     ('Little Women', 'Louisa M. Alcott'),
     ('Lord of the Flies', 'William Golding'),
@@ -46,7 +46,6 @@ titles = [
     ('The Big Sleep', 'Raymond Chandler'),
     ('The Black Sheep', 'Honoré De Balzac'),
     ('The Call of the Wild', 'Jack London'),
-    ('The Charterhouse of', 'Parma Stendhal'),
     ('The Count of Monte Cristo', 'Alexandre Dumas'),
     ('The Diary of a Nobody', 'George Grossmith'),
     ('The Good Soldier Ford', 'Madox Ford'),
@@ -74,13 +73,12 @@ titles = [
 ]
 
 
-counter = 1
-
-
-def save_png(svgdata):
-    global counter
-    name = 'testout/{}'.format(str(counter).zfill(3))
-    counter += 1
+def save_png(template, svgdata, counter={}):
+    if template not in counter:
+        counter[template] = 1
+    #name = f'output/{counter[template]:02d} - {template}'
+    name = f'output/{template} - {counter[template]:02d}'
+    counter[template] += 1
     svgfile = pathlib.Path(name + '.svg')
     with svgfile.open('w') as file:
         file.write(svgdata)
@@ -90,11 +88,11 @@ def save_png(svgdata):
 
 
 def test_everything():
-    for file in pathlib.Path('testout/').glob('*'):
+    for file in pathlib.Path('output/').glob('*'):
         file.unlink()
     for template in racovimge.templates:
         for colors in racovimge.color_schemes:
             title, author = random.choice(titles)
             font = random.choice(racovimge.fonts)
             image = racovimge.cover(title, author, template, colors, font)
-            save_png(image)
+            save_png(template, image)

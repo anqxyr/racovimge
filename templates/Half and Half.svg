@@ -14,16 +14,14 @@
     x="0"
     y="0" />
   <text
-    y="100"
-    x="600"
+    y="200"
     style="font-size:100px;font-weight:bold;fill:{{ color5 }};">
     {%- for line in title|wrap(20) %}
     <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="100">{{ line }}</tspan>
     {%- endfor %}
   </text>
   <text
-    y="1580"
-    x="600"
+    y="1500"
     style="font-size:60px;font-weight:bold;fill:{{ color5 }};">
     {%- for author in authors %}
     <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="-60">{{ author }}</tspan>
