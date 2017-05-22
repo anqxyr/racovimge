@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="no"?>
+<svg viewBox="0 0 1200 1600" width="1200" height="1600" xml:space="preserve">
+  <circle
+    fill="{{ color2 }}"
+    cx="600"
+    cy="800"
+    r="1000" />
+  <circle
+    fill="{{ color4 }}"
+    cx="600"
+    cy="800"
+    r="900" />
+  <circle
+    fill="{{ color3 }}"
+    cx="600"
+    cy="800"
+    r="800" />
+  <circle
+    fill="{{ color1 }}"
+    cx="600"
+    cy="800"
+    r="700" />
+  <circle
+    fill="{{ color2 }}"
+    cx="600"
+    cy="800"
+    r="600" />
+  <circle
+    fill="{{ color3 }}"
+    cx="600"
+    cy="800"
+    r="500" />
+  <circle
+    fill="{{ color1 }}"
+    cx="600"
+    cy="800"
+    r="400" />
+  <circle
+    fill="{{ color2 }}"
+    cx="600"
+    cy="800"
+    r="300" />
+  <circle
+    fill="{{ color3 }}"
+    cx="600"
+    cy="800"
+    r="200" />
+  <circle
+    fill="{{ color4 }}"
+    cx="600"
+    cy="800"
+    r="100" />
+  
+  <text
+    y="200"
+    style="font-size:100px;font-weight:bold;fill:{{ color5 }};">
+    {%- for line in title|wrap(20) %}
+    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="100">{{ line }}</tspan>
+    {%- endfor %}
+  </text>
+  <text
+    y="1500"
+    style="font-size:60px;font-weight:bold;fill:{{ color5 }};">
+    {%- for author in authors %}
+    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="-60">{{ author }}</tspan>
+    {%- endfor %}
+  </text>
+</svg>

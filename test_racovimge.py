@@ -48,7 +48,6 @@ titles = [
     ('The Call of the Wild', 'Jack London'),
     ('The Count of Monte Cristo', 'Alexandre Dumas'),
     ('The Diary of a Nobody', 'George Grossmith'),
-    ('The Good Soldier Ford', 'Madox Ford'),
     ('The Picture of Dorian Gray', 'Oscar Wilde'),
     ('The Plague', 'Albert Camus'),
     ('The Portrait of a Lady', 'Henry James'),
@@ -76,8 +75,8 @@ titles = [
 def save_png(template, svgdata, counter={}):
     if template not in counter:
         counter[template] = 1
-    #name = f'output/{counter[template]:02d} - {template}'
-    name = f'output/{template} - {counter[template]:02d}'
+    name = f'output/{counter[template]:02d} - {template}'
+    #name = f'output/{template} - {counter[template]:02d}'
     counter[template] += 1
     svgfile = pathlib.Path(name + '.svg')
     with svgfile.open('w') as file:

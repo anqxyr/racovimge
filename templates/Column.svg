@@ -13,7 +13,7 @@
     x="0"
     y="0" />
   <rect
-    style="fill:{{ color3 }};"
+    style="fill:{{ color4 }};"
     width="10"
     height="1600"
     x="100"
