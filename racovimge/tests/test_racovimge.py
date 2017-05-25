@@ -14,7 +14,7 @@ with open('racovimge/tests/books.txt') as file:
     titles = file.read().split('\n')
     titles = [i.split(' || ') for i in titles]
 
-for file in pathlib.Path('output').glob('*.*'):
+for file in pathlib.Path('output/').glob('*'):
     file.unlink()
 
 
@@ -22,7 +22,7 @@ def test_templates():
     for template in racovimge.templates:
         title, author = random.choice(titles)
         cover = racovimge.png_random(title, author, templates=[template])
-        with open('output/T - {}'.format(template), 'wb') as file:
+        with open('output/T - {}.png'.format(template), 'wb') as file:
             file.write(cover)
 
 
@@ -31,7 +31,7 @@ def test_colors():
         title, author = random.choice(titles)
         cover = racovimge.png_random(title, author, schemes=[color])
         color_index = racovimge.color_schemes.index(color) + 1
-        with open('output/C - {:02d}'.format(color_index), 'wb') as file:
+        with open('output/C - {:02d}.png'.format(color_index), 'wb') as file:
             file.write(cover)
 
 
@@ -40,6 +40,17 @@ def test_fonts():
         title, author = random.choice(titles)
         cover = racovimge.png_random(title, author, fonts=[font])
         font_name = font.split('/')[-1].split('.')[0]
-        with open('output/F - {}'.format(font_name), 'wb') as file:
+        with open('output/F - {}.png'.format(font_name), 'wb') as file:
             file.write(cover)
 
+
+def test_template_color_combinations():
+    for template in racovimge.templates:
+        for color in racovimge.color_schemes:
+            title, author = random.choice(titles)
+            cover = racovimge.png_random(
+                title, author, templates=[template], schemes=[color])
+            color_index = racovimge.color_schemes.index(color) + 1
+            path = 'output/A - {} - {:02d}.png'.format(template, color_index)
+            with open(path, 'wb') as file:
+                file.write(cover)

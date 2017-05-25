@@ -29,17 +29,17 @@
     x="0"
     y="400" />
   <text
-    y="{{ 360 - 100 * title|wrap(16)|length }}"
-    style="font-size:100px;font-weight:bold;fill:{{ color5 }};">
+    y="{{ 360 - title_size * title|wrap(16)|length }}"
+    style="font-size:{{ title_size }}px;font-weight:bold;fill:{{ color5 }};">
     {%- for line in title|wrap(16) %}
-    <tspan font-family="{{ font }}" text-anchor="start" x="340" dx="0" dy="100">{{ line }}</tspan>
+    <tspan font-family="{{ font }}" text-anchor="start" x="340" dx="0" dy="{{ title_size }}">{{ line }}</tspan>
     {%- endfor %}
   </text>
   <text
     y="480"
-    style="font-size:60px;font-weight:bold;fill:{{ color5 }};">
+    style="font-size:{{ author_size }}px;font-weight:bold;fill:{{ color5 }};">
     {%- for author in authors %}
-    <tspan font-family="{{ font }}" text-anchor="start" x="340" dx="0" dy="60">{{ author }}</tspan>
+    <tspan font-family="{{ font }}" text-anchor="start" x="340" dx="0" dy="{{ author_size }}">{{ author }}</tspan>
     {%- endfor %}
   </text>
 </svg>

@@ -53,6 +53,12 @@ def to_png(image):
     return data
 
 
+def wrap(text, length):
+    if '\n' in text:
+        return text.split('\n')
+    return textwrap.wrap(text, break_long_words=False, break_on_hyphens=False)
+
+
 ###############################################################################
 # Jinja2 setup
 ###############################################################################
@@ -95,14 +101,19 @@ fonts = [str(i.resolve()) for i in fonts]
 
 def random(
         title, author,
-        templates=templates, schemes=color_schemes, fonts=fonts):
+        templates=templates, schemes=color_schemes, fonts=fonts,
+        title_size=100, author_size=None):
     template = rand.choice(templates)
     colors = rand.choice(schemes)
     font = rand.choice(fonts)
-    return cover(title, author, template, colors, font)
+    return cover(
+        title, author, template=template, colors=colors, font=font,
+        title_size=title_size, author_size=author_size)
 
 
-def cover(title, author, template, colors, font):
+def cover(
+        title, author, template, colors, font,
+        title_size=100, author_size=None):
     authors = [author] if isinstance(author, str) else author
     authors = authors[:3]
     clr1, clr2, clr3, clr4, clr5 = colors
@@ -118,10 +129,14 @@ def cover(title, author, template, colors, font):
     font_name = font.stem
     font_type = font_mimetypes[font.suffix.lstrip('.')]
 
+    if not author_size:
+        author_size = title_size / 2
+
     image = env.get_template(template + '.svg').render(
         title=title, authors=authors,
         font=font_name, font_type=font_type, font_data=font_data,
-        color1=clr1, color2=clr2, color3=clr3, color4=clr4, color5=clr5)
+        color1=clr1, color2=clr2, color3=clr3, color4=clr4, color5=clr5,
+        title_size=title_size, author_size=author_size)
     return image
 
 
