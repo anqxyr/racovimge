@@ -4,10 +4,13 @@
 # Module Imports
 ###############################################################################
 
+import base64
 import jinja2
 import random as rand
 import pathlib
 import textwrap
+import tempfile
+import subprocess
 
 ###############################################################################
 # Helper Functins
@@ -17,7 +20,20 @@ import textwrap
 def to_rgb(color):
     color = color.lstrip('#')
     r, g, b = map(lambda x: int(x, 16), [color[:2], color[2:4], color[4:]])
-    return f'rgb({r},{g},{b})'
+    return 'rgb({},{},{})'.format(r, g, b)
+
+
+def to_png(image):
+    _, path = tempfile.mkstemp(suffix='.svg')
+    with open(path, 'w') as file:
+        file.write(image)
+    outpath = path.replace('.svg', '.png')
+    subprocess.call(['rsvg', path, outpath])
+    with open(outpath, 'rb') as file:
+        data = file.read()
+    pathlib.Path(path).unlink()
+    pathlib.Path(outpath).unlink()
+    return data
 
 
 ###############################################################################
@@ -50,9 +66,9 @@ color_schemes = [
     ('#452103', '#690500', '#210f04', '#934b00', '#bb6b00'),  # 12
 ]
 
-fonts = [
-    'Liberation Serif',
-]
+fonts = pathlib.Path(__file__).parent / 'fonts'
+fonts = [i.stem for i in fonts.glob('*.*') if i.suffix in ('.ttf', '.otf')]
+
 
 ###############################################################################
 # Covers
@@ -70,9 +86,17 @@ def random(
 
 def cover(title, author, template, colors, font):
     authors = [author] if isinstance(author, str) else author
-    authors = authors[:2]
+    authors = authors[:3]
     clr1, clr2, clr3, clr4, clr5 = colors
     image = env.get_template(template + '.svg').render(
         title=title, authors=authors, font=font,
         color1=clr1, color2=clr2, color3=clr3, color4=clr4, color5=clr5)
     return image
+
+
+def png_random(*args, **kwargs):
+    return to_png(random(*args, **kwargs))
+
+
+def png_cover(*args, **kwargs):
+    return to_png(cover(*args, **kwargs))

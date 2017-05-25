@@ -72,26 +72,30 @@ titles = [
 ]
 
 
-def save_png(template, svgdata, counter={}):
-    if template not in counter:
-        counter[template] = 1
-    name = f'output/{counter[template]:02d} - {template}'
-    #name = f'output/{template} - {counter[template]:02d}'
-    counter[template] += 1
-    svgfile = pathlib.Path(name + '.svg')
-    with svgfile.open('w') as file:
-        file.write(svgdata)
-    subprocess.run([
-        '/usr/bin/inkscape', '-z', name + '.svg', '-e', name + '.png'])
-    svgfile.unlink()
+def generate_permutations():
+    #for template in racovimge.templates:
+    for template in ['Blocks']:
+        for color in racovimge.color_schemes:
+            for font in racovimge.fonts:
+                yield template, color, font
 
 
-def test_everything():
+def save_image(template, color, font):
+    color_id = racovimge.color_schemes.index(color) + 1
+    font_name = pathlib.Path(font).stem
+    filename = 'output/{template} - {color_id:02d} - {font_name}.png'.format(
+        template=template, color_id=color_id, font_name=font_name)
+    with open(filename, 'wb') as file:
+        title, author = random.choice(titles)
+        file.write(racovimge.png_cover(title, author, template, color, font))
+
+
+def dump_all():
     for file in pathlib.Path('output/').glob('*'):
         file.unlink()
-    for template in racovimge.templates:
-        for colors in racovimge.color_schemes:
-            title, author = random.choice(titles)
-            font = random.choice(racovimge.fonts)
-            image = racovimge.cover(title, author, template, colors, font)
-            save_png(template, image)
+    for args in generate_permutations():
+        save_image(*args)
+
+
+def test_racovimge():
+    dump_all()
