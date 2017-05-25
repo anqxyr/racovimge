@@ -1,0 +1,230 @@
+The Great Gatsby || F. Scott Fitzgerald
+The Grapes of Wrath || John Steinbeck
+Nineteen Eighty-Four || George Orwell
+Ulysses || James Joyce
+Lolita || Vladimir Nabokov
+Catch-22 || Joseph Heller
+The Catcher in the Rye || J. D. Salinger
+Beloved || Toni Morrison
+The Sound and the Fury || William Faulkner
+To Kill a Mockingbird || Harper Lee
+The Lord of the Rings || J. R. R. Tolkien
+One Hundred Years of Solitude || Gabriel García Márquez
+Brave New World || Aldous Huxley
+To the Lighthouse || Virginia Woolf
+Invisible Man || Ralph Ellison
+Gone with the Wind || Margaret Mitchell
+Jane Eyre || Charlotte Brontë
+On the Road || Jack Kerouac
+Pride and Prejudice || Jane Austen
+Lord of the Flies || William Golding
+Middlemarch || George Eliot
+Anna Karenina || Leo Tolstoy
+Animal Farm || George Orwell
+A Passage to India || E. M. Forster
+In Search of Lost Time || Marcel Proust
+Wuthering Heights || Emily Brontë
+The Chronicles of Narnia || C. S. Lewis
+The Color Purple || Alice Walker
+Midnight's Children || Salman Rushdie
+A Portrait of the Artist as a Young Man || James Joyce
+Winnie-the-Pooh || A. A. Milne
+Heart of Darkness || Joseph Conrad
+Mrs Dalloway || Virginia Woolf
+Slaughterhouse-Five || Kurt Vonnegut
+War and Peace || Leo Tolstoy
+Of Mice and Men || John Steinbeck
+Moby-Dick || Herman Melville
+Little Women || Louisa May Alcott
+Native Son || Richard Wright
+The Hitchhiker's Guide to the Galaxy || Douglas Adams
+Great Expectations || Charles Dickens
+The Sun Also Rises || Ernest Hemingway
+Rebecca || Daphne du Maurier
+The Stranger || Albert Camus
+Alice's Adventures in Wonderland and Through the Looking Glass || Lewis Carroll
+For Whom the Bell Tolls || Ernest Hemingway
+The Hobbit || J. R. R. Tolkien
+Madame Bovary || Gustave Flaubert
+The Wind in the Willows || Kenneth Grahame
+The Handmaid’s Tale || Margaret Atwood
+Tess of the D'Urbervilles || Thomas Hardy
+Their Eyes Were Watching God || Zora Neale Hurston
+A Prayer for Owen Meany || John Irving
+Emma || Jane Austen
+David Copperfield || Charles Dickens
+The Portrait of a Lady || Henry James
+The Trial || Franz Kafka
+Crime and Punishment || Fyodor Dostoyevsky
+A Clockwork Orange || Anthony Burgess
+The Age of Innocence || Edith Wharton
+Don Quixote || Miguel de Cervantes
+As I Lay Dying || William Faulkner
+His Dark Materials || Philip Pullman
+Brideshead Revisited || Evelyn Waugh
+The Golden Notebook || Doris Lessing
+Adventures of Huckleberry Finn || Mark Twain
+Things Fall Apart || Chinua Achebe
+Tom Jones || Henry Fielding
+Harry Potter and the Philosopher's Stone || J. K. Rowling
+Song of Solomon || Toni Morrison
+Molloy; Malone Dies; The Unnamable || Samuel Beckett
+Finnegans Wake || James Joyce
+Absalom, Absalom! || William Faulkner
+The Life and Opinions of Tristram Shandy, Gentleman || Laurence Sterne
+Charlotte's Web || E. B. White
+The Ambassadors || Henry James
+Sons and Lovers || D. H. Lawrence
+A Farewell to Arms || Ernest Hemingway
+Women in Love || D. H. Lawrence
+Birdsong || Sebastian Faulks
+Gulliver's travels || Jonathan Swift
+Watership Down || Richard Adams
+Gravity's Rainbow || Thomas Pynchon
+Frankenstein || Mary Shelley
+Clarissa: Or the History of a Young Lady || Samuel Richardson
+The Old Man and the Sea || Ernest Hemingway
+Dune || Frank Herbert
+The Life and Adventures of Robinson Crusoe || Daniel Defoe
+Go Tell It on the Mountain || James Baldwin
+All the King's Men || Robert Penn Warren
+The Magic Mountain || Thomas Mann
+The Call of the Wild || Jack London
+The Tin Drum || Günter Grass
+The 42nd Parallel || John Dos Passos
+Under the Volcano || Malcolm Lowry
+Disgrace || J. M. Coetzee
+The Diary of a Young Girl || Anne Frank
+Bleak House || Charles Dickens
+Light in August || William Faulkner
+The Scarlet Letter || Nathaniel Hawthorne
+Pale Fire || Vladimir Nabokov
+Captain Corelli's Mandolin || Louis de Bernières
+Howards End || E. M. Forster
+The Heart is A Lonely Hunter || Carson McCullers
+Vanity Fair || William Makepeace Thackeray
+Commedia || Dante Alighieri
+The Count of Monte Cristo || Alexandre Dumas
+An American Tragedy || Theodore Dreiser
+White Noise || Don DeLillo
+The World According to Garp || John Irving
+Atonement || Ian McEwan
+Nostromo || Joseph Conrad
+The House of Mirth || Edith Wharton
+The Brothers Karamazov || Fyodor Dostoevsky
+The Good Soldier || Ford Madox Ford
+The Name of the Rose || Umberto Eco
+The Shipping News || Annie Proulx
+The Woman in White || Wilkie Collins
+Herzog || Saul Bellow
+The Counterfeiters || Andre Gide
+My Ántonia || Willa Cather
+Scoop || Evelyn Waugh
+A Room with a View || E. M. Forster
+Bible: King James Version || KJV
+Wide Sargasso Sea || Jean Rhys
+Love in The Time of Cholera || Gabriel García Márquez
+The Remains of the day || Kazuo Ishiguro
+The Big Sleep || Raymond Chandler
+I, Claudius || Robert Graves
+Tropic of Cancer || Henry Miller
+Tender is the Night || F. Scott Fitzgerald
+Journey to the End of the Night || Louis-Ferdinand Céline
+The War of the Worlds || H. G. Wells
+A Suitable Boy || Vikram Seth
+Possession || A.S. Byatt
+A Confederacy of Dunces || John Kennedy Toole
+The Bell Jar || Sylvia Plath
+Waiting for Godot || Samuel Beckett
+The Brief Wondrous Life of Oscar Wao || Junot Diaz
+Being and Nothingness || Jean-Paul Sartre
+A Thousand Acres || Jane Smiley
+The Amazing Adventures of Kavalier and Clay || Michael Chabon
+The Gulag Archipelago, 1918-1956: An Experiment in Literary Investigation || Aleksandr Solzhenitsyn
+Charlie and the Chocolate Factory || Roald Dahl
+Lady Chatterley's Lover || D. H. Lawrence
+JR || William Gaddis
+The Histories || Herodotus
+Doctor Zhivago || Boris Pasternak
+Lucky Jim || Kingsley Amis
+Underworld || Don DeLillo
+If on a Winter's Night a Traveler || Italo Calvino
+Life || Georges Perec
+The Master and Margarita || Mikhail Bulgakov
+The Good Earth || Pearl S. Buck
+Henderson the Rain King || Saul Bellow
+Ironweed || William J. Kennedy
+Persuasion || Jane Austen
+The Rainbow || D. H. Lawrence
+A Dance to the Music of Time || Anthony Powell
+The Unbearable Lightness of Being || Milan Kundera
+Kim || Rudyard Kipling
+Brighton Rock || Graham Greene
+One Flew Over the Cuckoo's Nest || Ken Kesey
+The Adventures of Augie March || Saul Bellow
+A Bend in the River || V. S. Naipaul
+The Hound of the Baskervilles || Sir Arthur Conan Doyle
+Housekeeping || Marilynne Robinson
+Sophie's Choice || William Styron
+Ethan Frome || Edith Wharton
+Buddenbrooks || Thomas Mann
+Thérèse Desqueyroux || François Mauriac
+The Killer Angels || Michael Shaara
+Anne of Green Gables || L. M. Montgomery
+If This Is a Man and The Truce || Primo Levi
+The bridge of San Luis Rey || Thornton Wilder
+A Moveable Feast || Ernest Hemingway
+Dubliners || James Joyce
+Ficciones || Jorge Luis Borges
+Schindler's List || Thomas Keneally
+The Prime of Miss Jean Brodie || Muriel Spark
+Strange Case of Dr. Jekyll and Mr. Hyde || Robert Louis Stevenson
+Far from the Madding Crowd || Thomas Hardy
+Gilead || Marilynne Robinson
+Nausea || Jean-Paul Sartre
+The Wings of the Dove || Henry James
+The Little Prince || Antoine de Saint-Exupéry
+The Red Badge of Courage || Stephen Crane
+The Odyssey || Homer
+Memoirs of a Geisha || Arthur Golden
+Men Without Women || Ernest Hemingway
+The Tale of Genji || Murasaki Shikibu
+Cannery Row || John Steinbeck
+Life of Pi || Yann Martel
+In Our Time || Ernest Hemingway
+The Pilgrim's Progress || John Bunyan
+Jude the Obscure || Thomas Hardy
+Breakfast of Champions || Kurt Vonnegut
+Six Characters in Search of an Author || Luigi Pirandello
+The Day of the Locust || Nathanael West
+The Stand || Stephen King
+Austerlitz || W.G. Sebald
+Cat's Cradle || Kurt Vonnegut
+The Public Burning || Robert Coover
+Harry Potter and the Goblet of Fire || J. K. Rowling
+The Wind-Up Bird Chronicle || Haruki Murakami
+Man's Fate || Andre Malraux
+Jazz || Toni Morrison
+Dead Souls || Nikolai Gogol
+Rabbit, Run || John Updike
+The Complete Stories || Flannery O'Connor
+The Making of Americans || Gertrude Stein
+Crash || J. G. Ballard
+The Glass Bead Game || Hermann Hesse
+Darkness at Noon || Arthur Koestler
+The Plague || Albert Camus
+The Soft Machine || William S. Burroughs
+Les Liaisons Dangereuses || Pierre Choderlos de Laclos
+The Wanderer || Alain-Fournier
+Winesburg, Ohio || Sherwood Anderson
+Froth on the Daydream || Boris Vian
+Trainspotting || Irvine Welsh
+The Moviegoer || Walker Percy
+The Canterbury Tales || Geoffrey Chaucer
+Main Street || Sinclair Lewis
+Take It or Leave It || Raymond Federman
+Wild Swans: Three Daughters of China || Jung Chang
+Nightmare Abbey || Thomas Love Peacock
+My Name is Red || Orhan Pamuk
+The Second Sex || Simone de Beauvoir
+The Awakening || Kate Chopin

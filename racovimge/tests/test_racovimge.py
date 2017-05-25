@@ -10,90 +10,36 @@ import pathlib
 
 ###############################################################################
 
-titles = [
-    ('A Passage to India', 'EM Forster'),
-    ('A Time Odyssey', ('Arthur C. Clarke', 'Stephen Baxter')),
-    ('As I Lay Dying', 'William Faulkner'),
-    ('Brave New World', 'Aldous Huxley'),
-    ('Clarissa', 'Samuel Richardson'),
-    ('Dangerous Liaisons', 'Pierre Choderlos De Laclos'),
-    ('Daniel Deronda', 'George Eliot'),
-    ('David Copperfield', 'Charles Dickens'),
-    ('Don Quixote', 'Miguel De Cervantes'),
-    ('Emma', 'Jane Austen'),
-    ('Frankenstein', 'Mary Shelley'),
-    ('Freedom Beach', ('James Patrick Kelly', 'John Kessel')),
-    ('Huckleberry Finn', 'Mark Twain'),
-    ('In Search of Lost Time', 'Marcel Proust'),
-    ('Inferno', ('Larry Niven', 'Jerry Pournelle')),
-    ('Jane Eyre', 'Charlotte Brontë'),
-    ('Journey to the End of the Night', 'Louis Ferdinand Celine'),
-    ('Jude the Obscure', 'Thomas Hardy'),
-    ('Little Women', 'Louisa M. Alcott'),
-    ('Lord of the Flies', 'William Golding'),
-    ('Lucky Jim', 'Kingsley Amis'),
-    ('Madame Bovary', 'Gustave Flaubert'),
-    ('Malone Dies', 'Samuel Beckett'),
-    ('Men Without Women', 'Ernest Hemingway'),
-    ('Moby-Dick', 'Herman Melville'),
-    ('Mrs Dalloway', 'Virginia Woolf'),
-    ('Nightmare Abbey', 'Thomas Love Peacock'),
-    ('Nineteen Eighty-Four', 'George Orwell'),
-    ('Nostromo', 'Joseph Conrad'),
-    ('Robinson Crusoe', 'Daniel Defoe'),
-    ('Sybil', 'Benjamin Disraeli'),
-    ('The Big Sleep', 'Raymond Chandler'),
-    ('The Black Sheep', 'Honoré De Balzac'),
-    ('The Call of the Wild', 'Jack London'),
-    ('The Count of Monte Cristo', 'Alexandre Dumas'),
-    ('The Diary of a Nobody', 'George Grossmith'),
-    ('The Picture of Dorian Gray', 'Oscar Wilde'),
-    ('The Plague', 'Albert Camus'),
-    ('The Portrait of a Lady', 'Henry James'),
-    ('The Pursuit Of Love', 'Nancy Mitford'),
-    ('The Riddle of the Sands', 'Erskine Childers'),
-    ('The Scarlet Letter', 'Nathaniel Hawthorne'),
-    ('The Space Merchants', ('Frederik Pohl', 'Cyril M. Kornblut')),
-    ('The Strange Case of Dr Jekyll and Mr Hyde', 'Robert Louis Stevenson'),
-    ('The Thirty-Nine Steps', 'John Buchan'),
-    ('The Trial', 'Franz Kafka'),
-    ('The Way We Live Now', 'Anthony Trollope'),
-    ('The Wind in the Willows', 'Kenneth Grahame'),
-    ('The Woman in White', 'Wilkie Collins'),
-    ('Three Men in a Boat', 'Jerome K. Jerome'),
-    ('Tom Jones', 'Henry Fielding'),
-    ('Tristram Shandy', 'Laurence Sterne'),
-    ('Ulysses', 'James Joyce'),
-    ('Vanity Fair', 'William Makepeace Thackeray'),
-    ('Wuthering Heights', 'Emily Brontë'),
-    ('Анна Каренина', 'Лев Толстой'),
-    ('Братья Карамазовы', 'Фёодр Достоевский'),
-]
+with open('racovimge/tests/books.txt') as file:
+    titles = file.read().split('\n')
+    titles = [i.split(' || ') for i in titles]
+
+for file in pathlib.Path('output').glob('*.*'):
+    file.unlink()
 
 
-def generate_permutations():
+def test_templates():
     for template in racovimge.templates:
-        for color in racovimge.color_schemes:
-            for font in racovimge.fonts:
-                yield template, color, font
-
-
-def save_image(template, color, font):
-    color_id = racovimge.color_schemes.index(color) + 1
-    font_name = pathlib.Path(font).stem
-    filename = 'output/{template} - {color_id:02d} - {font_name}.png'.format(
-        template=template, color_id=color_id, font_name=font_name)
-    with open(filename, 'wb') as file:
         title, author = random.choice(titles)
-        file.write(racovimge.png_cover(title, author, template, color, font))
+        cover = racovimge.png_random(title, author, templates=[template])
+        with open('output/T - {}'.format(template), 'wb') as file:
+            file.write(cover)
 
 
-def dump_all():
-    for file in pathlib.Path('output/').glob('*'):
-        file.unlink()
-    for args in generate_permutations():
-        save_image(*args)
+def test_colors():
+    for color in racovimge.color_schemes:
+        title, author = random.choice(titles)
+        cover = racovimge.png_random(title, author, schemes=[color])
+        color_index = racovimge.color_schemes.index(color) + 1
+        with open('output/C - {:02d}'.format(color_index), 'wb') as file:
+            file.write(cover)
 
 
-def test_racovimge():
-    dump_all()
+def test_fonts():
+    for font in racovimge.fonts:
+        title, author = random.choice(titles)
+        cover = racovimge.png_random(title, author, fonts=[font])
+        font_name = font.split('/')[-1].split('.')[0]
+        with open('output/F - {}'.format(font_name), 'wb') as file:
+            file.write(cover)
+
