@@ -67,7 +67,8 @@ color_schemes = [
 ]
 
 fonts = pathlib.Path(__file__).parent / 'fonts'
-fonts = [i.stem for i in fonts.glob('*.*') if i.suffix in ('.ttf', '.otf')]
+fonts = [i for i in fonts.glob('*.*') if i.suffix in ('.ttf', '.otf')]
+fonts = [str(i.resolve()) for i in fonts]
 
 
 ###############################################################################
@@ -88,8 +89,21 @@ def cover(title, author, template, colors, font):
     authors = [author] if isinstance(author, str) else author
     authors = authors[:3]
     clr1, clr2, clr3, clr4, clr5 = colors
+
+    font_mimetypes = dict(
+        otf='font/opentype',
+        ttf='application/x-font-ttf')
+
+    font = pathlib.Path(font)
+    with font.open('rb') as file:
+        font_data = file.read()
+        font_data = base64.b64encode(font_data).decode('utf-8')
+    font_name = font.stem
+    font_type = font_mimetypes[font.suffix.lstrip('.')]
+
     image = env.get_template(template + '.svg').render(
-        title=title, authors=authors, font=font,
+        title=title, authors=authors,
+        font=font_name, font_type=font_type, font_data=font_data,
         color1=clr1, color2=clr2, color3=clr3, color4=clr4, color5=clr5)
     return image
 

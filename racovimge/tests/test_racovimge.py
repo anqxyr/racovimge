@@ -7,7 +7,6 @@
 import racovimge
 import random
 import pathlib
-import subprocess
 
 ###############################################################################
 
@@ -73,8 +72,7 @@ titles = [
 
 
 def generate_permutations():
-    #for template in racovimge.templates:
-    for template in ['Blocks']:
+    for template in racovimge.templates:
         for color in racovimge.color_schemes:
             for font in racovimge.fonts:
                 yield template, color, font

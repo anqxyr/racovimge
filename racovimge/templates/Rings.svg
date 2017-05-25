@@ -1,5 +1,15 @@
 <?xml version="1.0" standalone="no"?>
 <svg viewBox="0 0 1200 1600" width="1200" height="1600" xml:space="preserve">
+  <defs>
+    <style type="text/css">
+    <![CDATA[
+      @font-face {
+        font-family: "{{ font }}";
+        src: url("data:{{ font_type }};charset=utf-8;base64,{{ font_data }}");
+      }
+    ]]>
+    </style>
+  </defs>
   <circle
     fill="{{ color2 }}"
     cx="600"
