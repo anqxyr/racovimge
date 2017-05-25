@@ -6,11 +6,12 @@
 
 import base64
 import jinja2
-import random as rand
 import pathlib
-import textwrap
-import tempfile
+import random as rand
+import shutil
 import subprocess
+import tempfile
+import textwrap
 
 ###############################################################################
 # Helper Functins
@@ -21,6 +22,22 @@ def to_rgb(color):
     color = color.lstrip('#')
     r, g, b = map(lambda x: int(x, 16), [color[:2], color[2:4], color[4:]])
     return 'rgb({},{},{})'.format(r, g, b)
+
+
+def copy_fonts(*fonts):
+    """
+    Copy the fonts to the home directory.
+
+    Necessary in order to use the fonts durring the png conversion.
+    """
+    root = pathlib.Path.home() / '.fonts/racovimge'
+    if not root.exists():
+        root.mkdir(parents=True)
+
+    for font in fonts:
+        new_path = root / font.split('/')[-1]
+        if not new_path.exists():
+            shutil.copy(font, str(new_path))
 
 
 def to_png(image):
@@ -109,8 +126,10 @@ def cover(title, author, template, colors, font):
 
 
 def png_random(*args, **kwargs):
+    copy_fonts(*kwargs.get('fonts', fonts))
     return to_png(random(*args, **kwargs))
 
 
 def png_cover(*args, **kwargs):
+    copy_fonts(kwargs['font'])
     return to_png(cover(*args, **kwargs))
