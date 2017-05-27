@@ -51,7 +51,7 @@ def test_template_color_combinations():
             font = random.choice(racovimge.fonts)
             cover = racovimge.png_cover(
                 title, author,
-                template=template, color=color, font=font)
+                template=template, colors=color, font=font)
             color_index = racovimge.color_schemes.index(color) + 1
             path = 'output/A - {} - {:02d} - {}.png'.format(
                 template, color_index, pathlib.Path(font).stem)
