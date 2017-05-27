@@ -25,24 +25,24 @@
   <rect
     style="fill:{{ color2 }};"
     width="1200"
-    height="{{ 20 + 100 * title|wrap(20)|length }}"
+    height="{{ 20 + font_size * title|wrap(20)|length }}"
     x="0"
     y="110"
     ry="30" />
   <text
     y="100"
     x="600"
-    style="font-size:{{ title_size }}px;font-weight:bold;fill:{{ color5 }};">
+    style="font-size:{{ font_size }}px;font-weight:bold;fill:{{ color5 }};">
     {%- for line in title|wrap(20) %}
-    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="{{ title_size }}">{{ line }}</tspan>
+    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="{{ font_size }}">{{ line }}</tspan>
     {%- endfor %}
   </text>
   <text
     y="1580"
     x="600"
-    style="font-size:{{ author_size }}px;font-weight:bold;fill:{{ color5 }};">
+    style="font-size:{{ font_size_author }}px;font-weight:bold;fill:{{ color5 }};">
     {%- for author in authors %}
-    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="-{{ author_size }}">{{ author }}</tspan>
+    <tspan font-family="{{ font }}" text-anchor="middle" x="600" dx="0" dy="-{{ font_size_author }}">{{ author }}</tspan>
     {%- endfor %}
   </text>
 </svg>

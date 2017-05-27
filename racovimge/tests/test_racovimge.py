@@ -48,9 +48,12 @@ def test_template_color_combinations():
     for template in racovimge.templates:
         for color in racovimge.color_schemes:
             title, author = random.choice(titles)
-            cover = racovimge.png_random(
-                title, author, templates=[template], schemes=[color])
+            font = random.choice(racovimge.fonts)
+            cover = racovimge.png_cover(
+                title, author,
+                template=template, color=color, font=font)
             color_index = racovimge.color_schemes.index(color) + 1
-            path = 'output/A - {} - {:02d}.png'.format(template, color_index)
+            path = 'output/A - {} - {:02d} - {}.png'.format(
+                template, color_index, pathlib.Path(font).stem)
             with open(path, 'wb') as file:
                 file.write(cover)
