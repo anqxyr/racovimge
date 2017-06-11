@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+import argparse
+import racovimge
+
+parser = argparse.ArgumentParser()
+parser.add_argument('title', nargs='+')
+parser.add_argument('--authors', '-a', nargs='+')
+parser.add_argument('--output', '-o', default='cover')
+parser.add_argument('--count', '-c', type=int, default=1)
+parser.add_argument('--png', action='store_true')
+
+args = parser.parse_args()
+
+title = ' '.join(args.title)
+authors = [i.strip() for i in ' '.join(args.authors).split(',')]
+
+pad = len(str(args.count))
+num = '{{index:0{}d}}'.format(pad) if args.count != 1 else ''
+suffix = 'png' if args.png else 'svg'
+name = '{}{}.{}'.format(args.output, num, suffix)
+writemode = 'wb' if args.png else 'w'
+
+for idx in range(1, args.count + 1):
+    func = racovimge.png_random if args.png else racovimge.random
+    cover = func(title=title, author=authors)
+    with open(name.format(index=idx), writemode) as stream:
+        stream.write(cover)

@@ -6,6 +6,7 @@
 
 import base64
 import jinja2
+import os.path
 import pathlib
 import random as rand
 import shutil
@@ -30,7 +31,7 @@ def copy_fonts(*fonts):
 
     Necessary in order to use the fonts durring the png conversion.
     """
-    root = pathlib.Path.home() / '.fonts/racovimge'
+    root = pathlib.Path(os.path.expanduser('~')) / '.fonts/racovimge'
     if not root.exists():
         root.mkdir(parents=True)
 
@@ -64,7 +65,7 @@ def wrap(text, length):
 ###############################################################################
 
 env = jinja2.Environment(loader=jinja2.PackageLoader('racovimge'))
-env.filters['wrap'] = textwrap.wrap
+env.filters['wrap'] = wrap
 env.filters['rgb'] = to_rgb
 
 ###############################################################################

@@ -11,7 +11,7 @@
     </style>
   </defs>
   <rect
-    fill="{{ color3 }}"
+    fill="{{ color1 }}"
     width="1200"
     height="1600"
     x="0"
