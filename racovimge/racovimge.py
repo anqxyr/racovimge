@@ -54,10 +54,11 @@ def to_png(image):
     return data
 
 
-def wrap(text, length):
-    if '\n' in text:
-        return text.split('\n')
-    return textwrap.wrap(text, break_long_words=False, break_on_hyphens=False)
+def wrap(text, width):
+    if not isinstance(text, str):
+        return text
+    return textwrap.wrap(
+        text, break_long_words=False, break_on_hyphens=False, width=width)
 
 
 ###############################################################################
@@ -92,7 +93,7 @@ fonts = [str(i.resolve()) for i in fonts]
 def random(
         title, author, *,
         templates=templates, schemes=color_schemes, fonts=fonts,
-        font_size=100, font_size_author=50):
+        font_size=120, font_size_author=70):
     template = rand.choice(templates)
     colors = rand.choice(schemes)
     font = rand.choice(fonts)
@@ -103,9 +104,9 @@ def random(
 
 def cover(
         title, author, *, template, colors, font,
-        font_size=100, font_size_author=50):
+        font_size=120, font_size_author=70):
     authors = [author] if isinstance(author, str) else author
-    authors = authors[:3]
+    authors = authors[:3] if authors else None
     clr1, clr2, clr3, clr4, clr5 = colors
 
     font_mimetypes = dict(
