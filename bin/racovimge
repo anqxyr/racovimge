@@ -13,7 +13,10 @@ parser.add_argument('--png', action='store_true')
 args = parser.parse_args()
 
 title = ' '.join(args.title)
-authors = [i.strip() for i in ' '.join(args.authors).split(',')]
+if args.authors:
+    authors = [i.strip() for i in ' '.join(args.authors).split(',')]
+else:
+    authors = None
 
 pad = len(str(args.count))
 num = '{{index:0{}d}}'.format(pad) if args.count != 1 else ''

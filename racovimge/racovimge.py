@@ -106,7 +106,7 @@ def cover(
         title, author, *, template, colors, font,
         font_size=120, font_size_author=70):
     authors = [author] if isinstance(author, str) else author
-    authors = authors[:3] if authors else None
+    authors = authors[:3] if authors else []
     clr1, clr2, clr3, clr4, clr5 = colors
 
     font_mimetypes = dict(
