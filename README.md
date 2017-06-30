@@ -1,4 +1,4 @@
-<div align="center" style="padding:2px;">
+<div align="center" style="padding:0px; background-color: #DDD">
 <img src="examples/ex01.png" width="210px"><img src="examples/ex02.png" width="210px"><img src="examples/ex03.png" width="210px"><img src="examples/ex04.png" width="210px">
 <img src="examples/ex05.png" width="210px"><img src="examples/ex06.png" width="210px"><img src="examples/ex07.png" width="210px"><img src="examples/ex08.png" width="210px">
 <img src="examples/ex09.png" width="210px"><img src="examples/ex10.png" width="210px"><img src="examples/ex11.png" width="210px"><img src="examples/ex12.png" width="210px">
