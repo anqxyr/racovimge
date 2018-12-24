@@ -13,6 +13,7 @@ import shutil
 import subprocess
 import tempfile
 import textwrap
+import os
 
 ###############################################################################
 # Helper Functins
@@ -42,17 +43,18 @@ def copy_fonts(*fonts):
 
 
 def to_png(image):
-    _, path = tempfile.mkstemp(suffix='.svg')
+    fd, path = tempfile.mkstemp(suffix='.svg')
     with open(path, 'w') as file:
         file.write(image)
     outpath = path.replace('.svg', '.png')
-    subprocess.call(['rsvg', path, outpath])
+    subprocess.call(['cairosvg', path, '-o', outpath])
     with open(outpath, 'rb') as file:
         data = file.read()
     pathlib.Path(path).unlink()
     pathlib.Path(outpath).unlink()
+    os.close(fd)
+    os.remove(path)
     return data
-
 
 def wrap(text, width):
     if not isinstance(text, str):
